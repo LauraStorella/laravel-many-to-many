@@ -14,7 +14,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $cars = Car::all();
+        // dd($cars);
+        return view('cars.index', compact('cars'));
     }
 
     /**
@@ -46,9 +48,10 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        dd($car);
+        // dd($car);
         // dd($car->user);
         // dd($car->tags);
+        return view('cars.show', compact('car'));
     }
 
     /**
